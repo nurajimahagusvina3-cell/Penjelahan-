@@ -507,14 +507,18 @@
 
             document.getElementById('sync-status').innerText = "Status Cloud: Menyinkronkan...";
 
+            // Menggunakan mode 'no-cors' agar pengiriman POST tidak diblokir browser lintas domain
             fetch(API_URL, {
                 method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8",
+                },
                 body: JSON.stringify(payload)
-            }).then(res => res.json())
-              .then(data => {
+            }).then(() => {
                 document.getElementById('sync-status').innerText = "Status Cloud: Terhubung & Data Tersimpan";
             }).catch(err => {
-                document.getElementById('sync-status').innerText = "Status Cloud: Terkirim ke Sistem";
+                document.getElementById('sync-status').innerText = "Status Cloud: Gagal Menyimpan";
             });
         }
 
