@@ -33,17 +33,8 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-        }
-
-        header p {
-            margin: 5px 0 0;
-            font-size: 0.95rem;
-            color: var(--accent);
-        }
+        header h1 { margin: 0; font-size: 1.8rem; letter-spacing: 1px; }
+        header p { margin: 5px 0 0; font-size: 0.95rem; color: var(--accent); }
 
         .container {
             max-width: 900px;
@@ -54,15 +45,9 @@
             box-sizing: border-box;
         }
 
-        /* View Control */
-        .view-section {
-            display: none;
-        }
-        .view-section.active {
-            display: block;
-        }
+        .view-section { display: none; }
+        .view-section.active { display: block; }
 
-        /* Room Utama / Form Login */
         .login-card {
             background: white;
             padding: 30px;
@@ -73,31 +58,10 @@
             text-align: center;
         }
 
-        .login-card h2 {
-            color: var(--primary);
-            margin-top: 0;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #cbd5e0;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 0.95rem;
-        }
+        .login-card h2 { color: var(--primary); margin-top: 0; }
+        .form-group { margin-bottom: 15px; text-align: left; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 0.9rem; }
+        .form-group input { width: 100%; padding: 10px; border: 1px solid #cbd5e0; border-radius: 5px; box-sizing: border-box; font-size: 0.95rem; }
 
         .btn {
             background: var(--secondary);
@@ -111,10 +75,7 @@
             width: 100%;
             transition: background 0.2s;
         }
-
-        .btn:hover {
-            background: #236b43;
-        }
+        .btn:hover { background: #236b43; }
 
         .admin-link-btn {
             background: transparent;
@@ -126,7 +87,6 @@
             text-decoration: underline;
         }
 
-        /* Map Grid */
         .map-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -145,193 +105,36 @@
             flex-direction: column;
             justify-content: space-between;
         }
+        .level-card.locked { border-left-color: #ccc; background: #eee; cursor: not-allowed; opacity: 0.7; }
+        .level-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .level-number { background: var(--secondary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; }
+        .level-card.locked .level-number { background: #999; }
+        .level-badge { font-size: 0.75rem; background: #e2e8f0; padding: 3px 8px; border-radius: 12px; color: #4a5568; font-weight: 600; }
+        .level-title { font-size: 1.1rem; font-weight: bold; color: var(--primary); margin: 0 0 5px; }
+        .level-desc { font-size: 0.85rem; color: #666; margin: 0 0 12px; }
 
-        .level-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
+        #game-arena { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .arena-top { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 20px; }
+        .back-btn { background: #6c757d; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+        .question-box { font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px; }
+        .options-container { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+        .option-btn { background: #f8f9fa; border: 2px solid #cbd5e0; padding: 12px 15px; border-radius: 6px; text-align: left; cursor: pointer; font-size: 0.95rem; transition: all 0.2s; }
+        .option-btn:hover { background: #e2e8f0; border-color: var(--secondary); }
+        .option-btn.correct { background: #d4edda !important; border-color: #28a745 !important; color: #155724; font-weight: bold; }
+        .option-btn.wrong { background: #f8d7da !important; border-color: #dc3545 !important; color: #721c24; }
+        #feedback-msg { font-weight: bold; margin-bottom: 15px; min-height: 24px; }
+        .story-snippet { background: #fffdf5; border-left: 4px solid var(--accent); padding: 12px; margin-bottom: 15px; font-size: 0.9rem; font-style: italic; }
 
-        .level-card.locked {
-            border-left-color: #ccc;
-            background: #eee;
-            cursor: not-allowed;
-            opacity: 0.7;
-        }
+        .admin-panel { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        table, th, td { border: 1px solid #cbd5e0; }
+        th, td { padding: 10px; text-align: left; font-size: 0.9rem; }
+        th { background-color: #f1f5f9; color: var(--primary); }
+        .toolbar { display: flex; gap: 10px; margin-bottom: 15px; }
+        
+        #sync-status { font-size: 0.8rem; color: #666; margin-top: 5px; font-style: italic; }
 
-        .level-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .level-number {
-            background: var(--secondary);
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .level-card.locked .level-number {
-            background: #999;
-        }
-
-        .level-badge {
-            font-size: 0.75rem;
-            background: #e2e8f0;
-            padding: 3px 8px;
-            border-radius: 12px;
-            color: #4a5568;
-            font-weight: 600;
-        }
-
-        .level-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin: 0 0 5px;
-        }
-
-        .level-desc {
-            font-size: 0.85rem;
-            color: #666;
-            margin: 0 0 12px;
-        }
-
-        /* Game Arena */
-        #game-arena {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .arena-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-        }
-
-        .back-btn {
-            background: #6c757d;
-            color: white;
-            border: nil;
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            border: none;
-        }
-
-        .question-box {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .options-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .option-btn {
-            background: #f8f9fa;
-            border: 2px solid #cbd5e0;
-            padding: 12px 15px;
-            border-radius: 6px;
-            text-align: left;
-            cursor: pointer;
-            font-size: 0.95rem;
-            transition: all 0.2s;
-        }
-
-        .option-btn:hover {
-            background: #e2e8f0;
-            border-color: var(--secondary);
-        }
-
-        .option-btn.correct {
-            background: #d4edda !important;
-            border-color: #28a745 !important;
-            color: #155724;
-            font-weight: bold;
-        }
-
-        .option-btn.wrong {
-            background: #f8d7da !important;
-            border-color: #dc3545 !important;
-            color: #721c24;
-        }
-
-        #feedback-msg {
-            font-weight: bold;
-            margin-bottom: 15px;
-            min-height: 24px;
-        }
-
-        .story-snippet {
-            background: #fffdf5;
-            border-left: 4px solid var(--accent);
-            padding: 12px;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            font-style: italic;
-        }
-
-        /* Admin Panel Styles */
-        .admin-panel {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        table, th, td {
-            border: 1px solid #cbd5e0;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            font-size: 0.9rem;
-        }
-
-        th {
-            background-color: #f1f5f9;
-            color: var(--primary);
-        }
-
-        .toolbar {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        footer {
-            background: #2c2c2c;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.85rem;
-            margin-top: auto;
-        }
+        footer { background: #2c2c2c; color: white; text-align: center; padding: 15px; font-size: 0.85rem; margin-top: auto; }
     </style>
 </head>
 <body>
@@ -342,11 +145,11 @@
     </header>
 
     <div class="container">
-        <!-- 1. ROOM UTAMA (LOGIN PESERTA DIDIK) -->
+        <!-- 1. ROOM UTAMA -->
         <div id="view-login" class="view-section active">
             <div class="login-card">
                 <h2>Room Utama Penjelajah</h2>
-                <p style="font-size: 0.85rem; color: #666; margin-bottom: 20px;">Masukkan identitas Anda sebelum memulai petualangan literasi.</p>
+                <p style="font-size: 0.85rem; color: #666; margin-bottom: 20px;">Masukkan identitas Anda untuk mulai tersinkronisasi dengan sistem guru.</p>
                 <form id="user-form" onsubmit="handleLogin(event)">
                     <div class="form-group">
                         <label for="student-name">Nama Lengkap</label>
@@ -354,7 +157,7 @@
                     </div>
                     <div class="form-group">
                         <label for="student-class">Kelas</label>
-                        <input type="text" id="student-class" placeholder="Contoh: Kelas X-1" required>
+                        <input type="text" id="student-class" placeholder="Contoh: X-A" required>
                     </div>
                     <button type="submit" class="btn">Masuk ke Peta Wilayah</button>
                 </form>
@@ -362,16 +165,17 @@
             </div>
         </div>
 
-        <!-- 2. PETA LEVEL PEMBELAJARAN -->
+        <!-- 2. PETA LEVEL -->
         <div id="view-dashboard" class="view-section">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                 <div>
                     <h3 id="welcome-user-banner" style="margin:0; color:var(--primary);">Selamat Datang, Penjelajah!</h3>
                     <span id="badge-user-info" style="font-size: 0.85rem; color: #555;"></span>
+                    <div id="sync-status">Status Cloud: Terhubung</div>
                 </div>
                 <button class="back-btn" onclick="logoutToLogin()">Keluar / Ganti Akun</button>
             </div>
-            <p style="font-size: 0.9rem; color: #555;">Selesaikan tantangan dari setiap wilayah untuk membuka level berikutnya dan mengungkap kisah *Mite Puteri Mayang*!</p>
+            <p style="font-size: 0.9rem; color: #555;">Selesaikan tantangan dari setiap wilayah untuk membuka level berikutnya!</p>
             <div class="map-grid" id="map-grid"></div>
         </div>
 
@@ -385,38 +189,36 @@
                     </div>
                     <button class="back-btn" onclick="returnToDashboard()">← Kembali ke Peta</button>
                 </div>
-                
                 <div id="arena-content"></div>
             </div>
         </div>
 
-        <!-- 4. PANEL ADMIN & REKAP DATA (TERHUBUNG KE SPREADSHEET / GOOGLE DRIVE) -->
+        <!-- 4. PANEL ADMIN (CLOUD REKAP) -->
         <div id="view-admin" class="view-section">
             <div class="admin-panel">
                 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 15px;">
-                    <h2 style="margin:0; color:var(--primary);">Dashboard Rekap Data Siswa (Admin)</h2>
+                    <h2 style="margin:0; color:var(--primary);">Dashboard Rekap Cloud Keseluruhan Siswa</h2>
                     <button class="back-btn" onclick="logoutToLogin()">Keluar Admin</button>
                 </div>
-                <p style="font-size: 0.9rem; color: #555;">Data rekap kemajuan belajar seluruh peserta didik tersimpan otomatis dan dapat disinkronkan ke Google Spreadsheet atau Google Drive.</p>
+                <p style="font-size: 0.9rem; color: #555;">Data di bawah ini merangkum seluruh pengerjaan siswa dari berbagai perangkat yang masuk ke Google Spreadsheet.</p>
                 
                 <div class="toolbar">
-                    <button class="btn" style="width: auto;" onclick="exportToCSV()">📥 Ekspor ke CSV (Spreadsheet)</button>
-                    <button class="btn" style="width: auto; background:#4a5568;" onclick="clearLogs()">🗑️ Bersihkan Data</button>
+                    <button class="btn" style="width: auto;" onclick="fetchAdminData()">🔄 Muat Ulang Data Terbaru</button>
                 </div>
 
                 <div style="overflow-x: auto;">
                     <table>
                         <thead>
                             <tr>
-                                <th>Waktu Akses</th>
+                                <th>Waktu Kirim</th>
                                 <th>Nama Peserta</th>
                                 <th>Kelas</th>
-                                <th>Level Tertinggi</th>
-                                <th>Status Terakhir</th>
+                                <th>Progres Tertinggi</th>
+                                <th>Status Pengerjaan</th>
                             </tr>
                         </thead>
                         <tbody id="admin-table-body">
-                            <!-- Diisi via Javascript -->
+                            <tr><td colspan="5" style="text-align:center; color:#777;">Memuat data dari cloud...</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -429,6 +231,9 @@
     </footer>
 
     <script>
+        // URL Web App Google Apps Script yang sudah terpasang
+        const API_URL = "https://script.google.com/macros/s/AKfycbwrhRmFhDLB2fk1COr_89fp2KqY0EgDR06JywtAuH21eCwsM7bPzk-rPvkrmpxQvjji/exec";
+
         const levels = [
             {
                 id: 1, title: "Gerbang Maanyan", topic: "Orientasi cerita & konteks budaya", type: "Quiz",
@@ -561,20 +366,15 @@
 
         function handleLogin(event) {
             event.preventDefault();
-            const name = document.getElementById('student-name').value.trim();
-            const className = document.getElementById('student-class').value.trim();
-
-            if (!name || !className) return;
-
-            currentUser.name = name;
-            currentUser.className = className;
+            currentUser.name = document.getElementById('student-name').value.trim();
+            currentUser.className = document.getElementById('student-class').value.trim();
             currentUser.progress = 1;
             currentUser.status = "Sedang Berproses";
 
-            document.getElementById('welcome-user-banner').innerText = `Selamat Datang, ${name}!`;
-            document.getElementById('badge-user-info').innerText = `Kelas: ${className}`;
+            document.getElementById('welcome-user-banner').innerText = `Selamat Datang, ${currentUser.name}!`;
+            document.getElementById('badge-user-info').innerText = `Kelas: ${currentUser.className}`;
 
-            saveDataToStorage();
+            syncDataToCloud();
             renderMap();
             switchView('view-dashboard');
         }
@@ -582,7 +382,7 @@
         function openAdminPanel() {
             const pin = prompt("Masukkan Kata Sandi Admin / Guru:");
             if (pin === "admin123" || pin === "guru") {
-                renderAdminTable();
+                fetchAdminData();
                 switchView('view-admin');
             } else if (pin !== null) {
                 alert("Kata sandi salah!");
@@ -626,7 +426,6 @@
             if (!lvl) return;
 
             switchView('view-arena');
-
             document.getElementById('arena-level-badge').innerText = `Level ${lvl.id} - ${lvl.type}`;
             document.getElementById('arena-title').innerText = lvl.title;
 
@@ -662,16 +461,13 @@
 
             optionButtons.forEach((btn, idx) => {
                 btn.disabled = true;
-                if (idx === correctIndex) {
-                    btn.classList.add('correct');
-                } else if (idx === selectedIndex) {
-                    btn.classList.add('wrong');
-                }
+                if (idx === correctIndex) btn.classList.add('correct');
+                else if (idx === selectedIndex) btn.classList.add('wrong');
             });
 
             if (selectedIndex === correctIndex) {
                 feedback.style.color = '#28a745';
-                feedback.innerText = '🎉 Luar biasa! Jawaban Anda benar. Tantangan wilayah berhasil diselesaikan.';
+                feedback.innerText = '🎉 Luar biasa! Jawaban benar.';
                 
                 if (levelId === currentUser.progress && currentUser.progress < levels.length) {
                     currentUser.progress++;
@@ -679,14 +475,12 @@
                 if (currentUser.progress === levels.length && levelId === levels.length) {
                     currentUser.status = "Tuntas (Selesai)";
                 }
-                saveDataToStorage();
+                syncDataToCloud();
                 nextBtn.style.display = 'block';
             } else {
                 feedback.style.color = '#dc3545';
-                feedback.innerText = '❌ Kurang tepat. Silakan pelajari kembali teks cerita dan coba lagi!';
-                setTimeout(() => {
-                    startLevel(levelId);
-                }, 2000);
+                feedback.innerText = '❌ Kurang tepat. Coba lagi!';
+                setTimeout(() => { startLevel(levelId); }, 2000);
             }
         }
 
@@ -695,7 +489,7 @@
                 startLevel(currentId + 1);
             } else {
                 returnToDashboard();
-                alert('🏆 Selamat! Anda telah menuntaskan seluruh "Petualangan Literasi Maanyan" dari Level 1 sampai 10!');
+                alert('🏆 Selamat! Anda menuntaskan seluruh petualangan!');
             }
         }
 
@@ -704,80 +498,56 @@
             renderMap();
         }
 
-        // --- SISTEM PENYIMPANAN DATA & SPREADSHEET REKAP ---
-        function saveDataToStorage() {
-            let logs = JSON.parse(localStorage.getItem('maanyan_logs')) || [];
-            const timestamp = new Date().toLocaleString();
-            
-            // Cek apakah siswa sudah ada di log berdasarkan nama & kelas
-            let existingIndex = logs.findIndex(l => l.name === currentUser.name && l.className === currentUser.className);
-            
-            const record = {
-                time: timestamp,
+        function syncDataToCloud() {
+            const payload = {
                 name: currentUser.name,
                 className: currentUser.className,
                 progress: `Level ${currentUser.progress} / 10`,
                 status: currentUser.status
             };
 
-            if (existingIndex >= 0) {
-                logs[existingIndex] = record; // Update progres terbaru
-            } else {
-                logs.push(record);
-            }
+            document.getElementById('sync-status').innerText = "Status Cloud: Menyinkronkan...";
 
-            localStorage.setItem('maanyan_logs', JSON.stringify(logs));
+            fetch(API_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            }).then(() => {
+                document.getElementById('sync-status').innerText = "Status Cloud: Terhubung & Data Tersimpan";
+            }).catch(err => {
+                document.getElementById('sync-status').innerText = "Status Cloud: Gagal Sinkronisasi";
+            });
         }
 
-        function renderAdminTable() {
+        function fetchAdminData() {
             const tbody = document.getElementById('admin-table-body');
-            tbody.innerHTML = '';
-            let logs = JSON.parse(localStorage.getItem('maanyan_logs')) || [];
+            tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:#777;">Memuat data terbaru dari Google Spreadsheet...</td></tr>`;
 
-            if (logs.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:#777;">Belum ada data rekap siswa yang tersimpan.</td></tr>`;
-                return;
-            }
+            fetch(API_URL)
+                .then(res => res.json())
+                .then(data => {
+                    tbody.innerHTML = '';
+                    if (data.length === 0) {
+                        tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:#777;">Belum ada data siswa yang masuk.</td></tr>`;
+                        return;
+                    }
 
-            logs.forEach(log => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td>${log.time}</td>
-                    <td>${log.name}</td>
-                    <td>${log.className}</td>
-                    <td>${log.progress}</td>
-                    <td><span style="color: ${log.status.includes('Tuntas') ? 'green' : 'orange'}; font-weight:bold;">${log.status}</span></td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        function exportToCSV() {
-            let logs = JSON.parse(localStorage.getItem('maanyan_logs')) || [];
-            if (logs.length === 0) {
-                alert("Belum ada data untuk diekspor!");
-                return;
-            }
-
-            let csvContent = "data:text/csv;charset=utf-8,Waktu,Nama Siswa,Kelas,Level Tertinggi,Status\n";
-            logs.forEach(row => {
-                csvContent += `"${row.time}","${row.name}","${row.className}","${row.progress}","${row.status}"\n`;
-            });
-
-            const encodedUri = encodeURI(csvContent);
-            const link = document.createElement("a");
-            link.setAttribute("href", encodedUri);
-            link.setAttribute("download", "rekap_petualangan_literasi_maanyan.csv");
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        function clearLogs() {
-            if (confirm("Apakah Anda yakin ingin menghapus seluruh data rekap siswa?")) {
-                localStorage.removeItem('maanyan_logs');
-                renderAdminTable();
-            }
+                    data.forEach(row => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${row.time}</td>
+                            <td>${row.name}</td>
+                            <td>${row.className}</td>
+                            <td>${row.progress}</td>
+                            <td><span style="color: ${row.status.includes('Tuntas') ? 'green' : 'orange'}; font-weight:bold;">${row.status}</span></td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                })
+                .catch(err => {
+                    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:red;">Gagal memuat data dari cloud. Periksa koneksi internet Anda.</td></tr>`;
+                });
         }
     </script>
 </body>
