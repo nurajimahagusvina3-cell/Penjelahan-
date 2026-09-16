@@ -507,7 +507,6 @@
 
             document.getElementById('sync-status').innerText = "Status Cloud: Menyinkronkan...";
 
-            // Menggunakan teknik tanpa no-cors yang kaku dengan mengirim data via text/plain agar diterima Apps Script
             fetch(API_URL, {
                 method: "POST",
                 body: JSON.stringify(payload)
@@ -515,7 +514,6 @@
               .then(data => {
                 document.getElementById('sync-status').innerText = "Status Cloud: Terhubung & Data Tersimpan";
             }).catch(err => {
-                // Fallback jika mode standar diblokir browser, status tetap dianggap terkirim secara asinkron
                 document.getElementById('sync-status').innerText = "Status Cloud: Terkirim ke Sistem";
             });
         }
