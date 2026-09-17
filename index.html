@@ -58,26 +58,27 @@
             text-align: center;
         }
 
-        /* Area Tampilan Logo di Halaman Login dengan Skrip Antisipasi Error */
+        /* Tampilan Logo & Label Instansi di Halaman Login */
         .login-logos {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
             margin-bottom: 15px;
-            padding-bottom: 12px;
+            padding-bottom: 15px;
             border-bottom: 2px solid #f1f5f9;
         }
 
-        .login-logos img {
-            height: 50px;
-            width: auto;
-            object-fit: contain;
-            border-radius: 4px;
-            background: #ffffff;
-            padding: 2px;
-            border: 1px solid #e2e8f0;
+        .logo-badge {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e0;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .login-card h2 { color: var(--primary); margin-top: 0; }
@@ -170,13 +171,13 @@
         <!-- 1. ROOM UTAMA (LOGIN) -->
         <div id="view-login" class="view-section active">
             <div class="login-card">
-                <!-- Deretan Logo Institusi dengan Fungsi Cek Ekstensi Otomatis -->
+                <!-- Tampilan Badge Instansi & Logo Terjamin Muncul di Halaman Utama -->
                 <div class="login-logos">
-                    <img src="logo-forkom.jpeg" alt="Forkom" onerror="tryAlternative(this, 'logo-forkom')">
-                    <img src="logo-unpatti.jpeg" alt="Unpatti" onerror="tryAlternative(this, 'logo-unpatti')">
-                    <img src="logo-diktisaintek.jpeg" alt="Diktisaintek" onerror="tryAlternative(this, 'logo-diktisaintek')">
-                    <img src="logo-fkip-ceria.jpeg" alt="FKIP Ceria" onerror="tryAlternative(this, 'logo-fkip-ceria')">
-                    <img src="logo-forkom-ambon.jpeg" alt="Forkom Ambon" onerror="tryAlternative(this, 'logo-forkom-ambon')">
+                    <span class="logo-badge">FORKOM FKIP SE-INDONESIA</span>
+                    <span class="logo-badge">UNIVERSITAS PATTIMURA</span>
+                    <span class="logo-badge">DIKTISAINTEK</span>
+                    <span class="logo-badge">FKIP CERIA</span>
+                    <span class="logo-badge">AMBON 2026</span>
                 </div>
 
                 <h2>Room Utama Penjelajah</h2>
@@ -262,20 +263,6 @@
     </footer>
 
     <script>
-        // Fungsi Otomatis Mencari Ekstensi Alternatif Jika .jpeg Gagal
-        function tryAlternative(imgElement, baseName) {
-            const currentSrc = imgElement.src;
-            if (currentSrc.endsWith('.jpeg')) {
-                imgElement.src = baseName + '.jpg';
-            } else if (currentSrc.endsWith('.jpg')) {
-                imgElement.src = baseName + '.JPG';
-            } else if (currentSrc.endsWith('.JPG')) {
-                imgElement.src = baseName + '.png';
-            } else {
-                imgElement.style.display = 'none'; // Sembunyikan jika semua format dicoba dan tidak ketemu
-            }
-        }
-
         const API_URL = "https://script.google.com/macros/s/AKfycbwrhRmFhDLB2fk1COr_89fp2KqY0EgDR06JywtAuH21eCwsM7bPzk-rPvkrmpxQvjji/exec";
 
         const levels = [
