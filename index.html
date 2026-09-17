@@ -58,7 +58,7 @@
             text-align: center;
         }
 
-        /* Area Tampilan Logo di Halaman Login */
+        /* Area Tampilan Logo di Halaman Login dengan Skrip Antisipasi Error */
         .login-logos {
             display: flex;
             justify-content: center;
@@ -71,7 +71,7 @@
         }
 
         .login-logos img {
-            height: 48px;
+            height: 50px;
             width: auto;
             object-fit: contain;
             border-radius: 4px;
@@ -170,13 +170,13 @@
         <!-- 1. ROOM UTAMA (LOGIN) -->
         <div id="view-login" class="view-section active">
             <div class="login-card">
-                <!-- Deretan Logo Institusi/Kegiatan -->
+                <!-- Deretan Logo Institusi dengan Fungsi Cek Ekstensi Otomatis -->
                 <div class="login-logos">
-                    <img src="logo-forkom.jpeg" alt="Forkom" onerror="this.style.display='none'">
-                    <img src="logo-unpatti.jpeg" alt="Unpatti" onerror="this.style.display='none'">
-                    <img src="logo-diktisaintek.jpeg" alt="Diktisaintek" onerror="this.style.display='none'">
-                    <img src="logo-fkip-ceria.jpeg" alt="FKIP Ceria" onerror="this.style.display='none'">
-                    <img src="logo-forkom-ambon.jpeg" alt="Forkom Ambon" onerror="this.style.display='none'">
+                    <img src="logo-forkom.jpeg" alt="Forkom" onerror="tryAlternative(this, 'logo-forkom')">
+                    <img src="logo-unpatti.jpeg" alt="Unpatti" onerror="tryAlternative(this, 'logo-unpatti')">
+                    <img src="logo-diktisaintek.jpeg" alt="Diktisaintek" onerror="tryAlternative(this, 'logo-diktisaintek')">
+                    <img src="logo-fkip-ceria.jpeg" alt="FKIP Ceria" onerror="tryAlternative(this, 'logo-fkip-ceria')">
+                    <img src="logo-forkom-ambon.jpeg" alt="Forkom Ambon" onerror="tryAlternative(this, 'logo-forkom-ambon')">
                 </div>
 
                 <h2>Room Utama Penjelajah</h2>
@@ -262,6 +262,20 @@
     </footer>
 
     <script>
+        // Fungsi Otomatis Mencari Ekstensi Alternatif Jika .jpeg Gagal
+        function tryAlternative(imgElement, baseName) {
+            const currentSrc = imgElement.src;
+            if (currentSrc.endsWith('.jpeg')) {
+                imgElement.src = baseName + '.jpg';
+            } else if (currentSrc.endsWith('.jpg')) {
+                imgElement.src = baseName + '.JPG';
+            } else if (currentSrc.endsWith('.JPG')) {
+                imgElement.src = baseName + '.png';
+            } else {
+                imgElement.style.display = 'none'; // Sembunyikan jika semua format dicoba dan tidak ketemu
+            }
+        }
+
         const API_URL = "https://script.google.com/macros/s/AKfycbwrhRmFhDLB2fk1COr_89fp2KqY0EgDR06JywtAuH21eCwsM7bPzk-rPvkrmpxQvjji/exec";
 
         const levels = [
