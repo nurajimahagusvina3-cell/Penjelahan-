@@ -33,6 +33,26 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
+        /* Gaya penataan logo di header */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .logo-container img {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4px 8px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
         header h1 { margin: 0; font-size: 1.8rem; letter-spacing: 1px; }
         header p { margin: 5px 0 0; font-size: 0.95rem; color: var(--accent); }
 
@@ -140,6 +160,15 @@
 <body>
 
     <header>
+        <!-- Bagian Tempat Logo -->
+        <div class="logo-container">
+            <img src="logo-forkom.png" alt="Logo Forkom" onerror="this.style.display='none'">
+            <img src="logo-unpatti.png" alt="Logo Unpatti" onerror="this.style.display='none'">
+            <img src="logo-diktisaintek.png" alt="Logo Diktisaintek" onerror="this.style.display='none'">
+            <img src="logo-fkip-ceria.png" alt="Logo FKIP Ceria" onerror="this.style.display='none'">
+            <img src="logo-forkom-ambon.png" alt="Logo Forkom Ambon" onerror="this.style.display='none'">
+        </div>
+        
         <h1>PETUALANGAN DAYAK MAANYAN</h1>
         <p>Menganalisis Cerita, Menemukan Makna, Menjaga Budaya — Berbasis Kearifan Lokal Dayak Maanyan</p>
     </header>
